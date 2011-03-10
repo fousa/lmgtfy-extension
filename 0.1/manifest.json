@@ -1,0 +1,15 @@
+{
+   "browser_action": {
+      "default_icon": "icon_19.png",
+      "default_popup": "popup.html",
+      "default_title": "Let Me Google That For You"
+   },
+   "description": "A toolbar button for Let Me Google That For You.",
+   "icons": {
+      "48": "icon_48.png"
+   },
+   "name": "Let Me Google That For You",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1"
+}
