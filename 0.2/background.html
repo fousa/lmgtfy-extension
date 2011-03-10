@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<script>
+			function getOptionValue(name, defaultValue) {	
+				var value = localStorage[name];	
+				
+				if (!value) {
+					return defaultValue;
+				}		
+				
+				return value;
+			}
+
+			function setOptionValue(name, value) {	
+				if (value) {
+					localStorage[name] = value;
+				}
+				else {
+					localStorage.removeItem(name);
+				}
+			}
+
+			function getOpenNewTab() {
+				return getOptionValue("openNewTab", "yes");
+			}
+
+			function setOptionOpenNewTab(value) {
+				setOptionValue("openNewTab", value);
+			}
+
+			function getCopyToClipboard() {
+				return getOptionValue("copyToClipboard", "yes");
+			}
+
+			function setOptionCopyToClipboard(value) {
+				setOptionValue("copyToClipboard", value);
+			}
+
+			function getOptionAll() {
+				return {
+					copyToClipboard: getCopyToClipboard(),
+					openNewTab: getOpenNewTab()
+				};
+			}
+
+			function setOptionAll(value) {
+				setOptionValue("copyToClipboard", value.copyToClipboard);
+				setOptionValue("openNewTab", value.openNewTab);
+			}
+		</script>
+  	</head>
+</html>

@@ -1,4 +1,5 @@
 {
+	 "background_page": "background.html",
    "browser_action": {
       "default_icon": "icon_19.png",
       "default_popup": "popup.html",
@@ -9,7 +10,8 @@
       "48": "icon_48.png"
    },
    "name": "Let Me G That For You",
+	 "options_page": "options.html",
    "permissions": [ "tabs" ],
    "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "0.1"
+   "version": "0.2"
 }

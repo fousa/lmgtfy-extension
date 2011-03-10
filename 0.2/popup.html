@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		<title>Let Me Google That For You Toolbar Button</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("input").select();
+				$("form").live("submit", function() {
+					if ($("#query").val().length > 0) {
+						var options = chrome.extension.getBackgroundPage().getOptionAll();
+						var tab = options.openNewTab;
+						
+						var text = "http://lmgtfy.com/?q=" + $("#query").val();
+						
+						if (tab == "yes") {
+							chrome.tabs.create({ url: text });
+						}
+
+						var copy = options.copyToClipboard;
+						if (copy == "yes") {
+							$("input").val(text);
+							$("input").select();
+              document.execCommand("copy", false, null);
+						}
+					}
+					window.close();
+
+					return false;
+				});
+			});
+
+		</script>
+		<style>
+			* { padding: 0; margin: 0; }
+			body { min-width: 350px; }
+			h1 { background: #fff url(icon_19.png) center left no-repeat; font-family: Verdana; font-size: 20px; padding-left: 25px; margin: 5px 5px; color: #323232; }
+			input { font-size: 25px; width: 340px; margin: 10px 5px 5px 5px; color: #323232; }
+			.blue { color: #2F69D5; }
+			.red { color: #EF1F32; }
+			.orange { color: #FFB43C; }
+			.green { color: #009B2E; }
+		</style>
+  	</head>
+  	<body>
+			<h1><span class="blue">Let</span> <span class="red">Me</span> <span class="orange">Google</span> <span class="blue">That</span> <span class="green">For</span> <span class="red">You</span></h1>
+  		<form method="GET">
+				<input type="text" id="query" />
+  		</form>
+	</body>
+</html>
+
