@@ -3,13 +3,13 @@
    "browser_action": {
       "default_icon": "icon_19.png",
       "default_popup": "popup.html",
-      "default_title": "Let Me G That For You"
+      "default_title": "LMGTFY"
    },
-   "description": "A toolbar button for Let Me G That For You.",
+   "description": "A toolbar button for LMGTFY.",
    "icons": {
       "48": "icon_48.png"
    },
-   "name": "Let Me G That For You",
+   "name": "LMGTFY",
 	 "options_page": "options.html",
    "permissions": [ "tabs" ],
    "update_url": "http://clients2.google.com/service/update2/crx",
